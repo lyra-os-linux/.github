@@ -44,6 +44,17 @@ na mesma base openSUSE Leap. Para mudar de versão, o usuário faz o upgrade.
 publicação da versão estável. Durante esse período, a release recebe as
 correções nos repositórios de pacotes dela.
 
-Para que isso seja possível, o fonte de cada release publicada é mantido: as
-tags de release (como `v16.1` e `server-v16.1`) não são apagadas nem movidas, e
-as correções de uma release suportada partem do fonte dessa release.
+As releases são das edições, o
+[Desktop](https://github.com/lyra-os-linux/lyraos-desktop) e o
+[Server](https://github.com/lyra-os-linux/lyraos-server). Para manter o suporte,
+o fonte de cada release publicada é preservado:
+
+- a tag da release (`v16.1` no Desktop, `server-v16.1` no Server) nunca é
+  apagada nem movida;
+- cada edição mantém a branch `release/16.1` durante o suporte, e as correções
+  da release entram nela por pull request, gerando as versões `16.1.N`;
+- a `main` de cada edição segue com o desenvolvimento da próxima versão.
+
+Componentes como o Vega, o Beam e o Sulafat **não pertencem a uma release**:
+continuam sendo desenvolvidos na `main` de cada repositório, com versão
+própria.
