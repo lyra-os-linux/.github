@@ -33,3 +33,17 @@ Veja como fazer um bom relato no [guia de contribuição](CONTRIBUTING.md).
 
 **Falhas de segurança não vão em issue pública:** siga a
 [política de segurança](SECURITY.md).
+
+## Ciclo de releases e suporte
+
+O Lyra OS **não é uma rolling release**. Cada versão (16.1, 16.2, …) é uma
+release fixa: depois de publicada, recebe correções e atualizações, mas continua
+na mesma base openSUSE Leap. Para mudar de versão, o usuário faz o upgrade.
+
+**Cada release da geração 16.x tem 2 anos de suporte**, contados da data de
+publicação da versão estável. Durante esse período, a release recebe as
+correções nos repositórios de pacotes dela.
+
+Para que isso seja possível, o fonte de cada release publicada é mantido: as
+tags de release (como `v16.1` e `server-v16.1`) não são apagadas nem movidas, e
+as correções de uma release suportada partem do fonte dessa release.
