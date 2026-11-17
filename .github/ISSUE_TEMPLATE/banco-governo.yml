@@ -1,0 +1,90 @@
+name: Problema com banco ou serviço do governo
+description: Site de banco, gov.br, Receita Federal ou PJe não funciona no Lyra
+labels: ["bug", "banco"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar! O Lyra não testa com contas bancárias reais, então o seu relato é o que permite corrigir.
+
+        **Nunca escreva aqui** CPF, agência, conta, senhas, códigos de token ou de SMS, e não anexe capturas de tela com dados bancários. Esta issue é pública. Nenhum campo abaixo precisa dessas informações.
+  - type: dropdown
+    id: servico
+    attributes:
+      label: Serviço
+      options:
+        - Banco do Brasil
+        - Caixa
+        - Itaú
+        - Bradesco
+        - Santander
+        - Sicredi
+        - Sicoob
+        - Banrisul
+        - Inter
+        - C6 Bank
+        - gov.br
+        - Receita Federal
+        - PJe
+        - Outro (diga qual na descrição)
+    validations:
+      required: true
+  - type: dropdown
+    id: sintoma
+    attributes:
+      label: O que acontece
+      options:
+        - Pede para instalar o módulo de segurança, mesmo instalado
+        - A página trava ou fica carregando
+        - Diz que o sistema ou o navegador não é suportado
+        - Erro com o certificado digital
+        - Outro
+    validations:
+      required: true
+  - type: dropdown
+    id: navegador
+    attributes:
+      label: Como abriu o site
+      options:
+        - Webapp do banco (Vega → Software → Populares → Bancos)
+        - Firefox
+        - Chrome
+        - Edge
+        - Chromium
+        - Brave
+        - Outro
+    validations:
+      required: true
+  - type: dropdown
+    id: pacote
+    attributes:
+      label: Tipo de instalação do navegador
+      options:
+        - RPM (Zypper ou Vega, repositórios do openSUSE/Lyra)
+        - Flatpak (Flathub)
+        - Não sei
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição
+      description: O que você fez e a mensagem que apareceu, sem dados pessoais.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostico
+    attributes:
+      label: Diagnóstico técnico
+      description: |
+        Cole a saída destes comandos no terminal. Eles mostram só versões e estados, nenhum dado pessoal:
+        `grep PRETTY /etc/os-release; rpm -q warsaw chromium vega-gtk; systemctl is-active warsaw.service`
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: vega
+    attributes:
+      label: Texto do "Pedir ajuda" do Vega (opcional)
+      description: Vega → Hardware → Diagnóstico de saúde → relatório → Pedir ajuda. O texto já sai sem dados pessoais.
+      render: markdown
